@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--        시간,날짜 출력 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#000000"
+            tools:ignore="MissingConstraints">
+
+            <!--        현재 년,월,일-->
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="yyyy년 MM월 dd일 (E)"
+                android:format24Hour="yyyy년 MM월 dd일"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            현재시간-->
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="a hh:mm:ss"
+                android:format24Hour="hh:mm:ss"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+        <!--        개발한 앱 기능(연락처,돋보기등)-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <!--                연락처 버튼-->
+
+
+                <Button
+                    android:id="@+id/phonebook_btn"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/address_book_48"
+                    android:text="연락처"
+                    android:padding="15dp"
+                    android:textSize="33sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <!--                돋보기 버튼-->
+
+                <Button
+                    android:id="@+id/magnify_btn"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/phone_call_48"
+                    android:text="돋보기"
+
+                    android:padding="15dp"
+                    android:textColor="#000000"
+                    android:textSize="33sp"
+                    android:textStyle="bold" />
+
+                <!--                설명서-->
+                <Button
+                    android:id="@+id/manual_btn"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_call"
+                    android:background="#00000000"
+                    android:text="설명서"
+
+                    android:padding="15dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="32sp"/>
+
+                <!--                미니게임-->
+                <Button
+                    android:id="@+id/game_btn"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_call"
+                    android:background="#00000000"
+                    android:text="오락"
+                    android:padding="15dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="32sp"/>
+
+                <!--                손전등-->
+                <Button
+                    android:id="@+id/light_btn"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_call"
+                    android:background="#00000000"
+                    android:text="손전등"
+                    android:padding="15dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="32sp"/>
+
+                <!--                보이지 않는 빈버튼-->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_call"
+                    android:background="#00000000"
+                    android:text="설명서"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    android:textSize="27sp"/>
+            </GridLayout>
+        </LinearLayout>
+
+        <!--    하단 앱 바로가기-->
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:columnCount="5">
+
+            <!--            전화앱(다이얼) 바로가기-->
+            <Button
+                android:id="@+id/callBtn"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:drawableTop="@drawable/phone_call_48"
+                android:text="전화"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:drawableTint="#FFFFFF"
+                android:textSize="23sp"/>
+
+            <!--            문자앱 바로가기-->
+            <Button
+                android:id="@+id/messageBtn"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:drawableTop="@drawable/ic_call"
+                android:text="문자"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:drawableTint="#FFFFFF"
+                android:textSize="23sp"/>
+
+            <!--            카메라앱 바로가기-->
+            <Button
+                android:id="@+id/cameraBtn"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:drawableTop="@drawable/ic_call"
+                android:text="카메라"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:drawableTint="#FFFFFF"
+                android:textSize="23sp"/>
+
+            <!--            사진첩바로가기-->
+            <Button
+                android:id="@+id/photoBtn"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:drawableTop="@drawable/ic_call"
+                android:text="사진첩"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:drawableTint="#FFFFFF"
+                android:textSize="23sp"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
